@@ -1,4 +1,3 @@
-/* ─── Constants ─────────────────────────────────────────── */
 
 const WIN_LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -19,14 +18,11 @@ const CONGRATS_MESSAGES = [
   'Unstoppable! Great game!',
 ];
 
-/* ─── State ─────────────────────────────────────────────── */
 
 let board        = Array(9).fill(null);
 let currentPlayer = 'X';
 let gameOver      = false;
 let scores        = { X: 0, O: 0, draw: 0 };
-
-/* ─── DOM refs ──────────────────────────────────────────── */
 
 const boardEl          = document.getElementById('board');
 const overlay          = document.getElementById('result-overlay');
@@ -38,7 +34,6 @@ const confettiContainer = document.getElementById('confetti-container');
 
 const cells = []; // filled during board construction
 
-/* ─── Board construction ────────────────────────────────── */
 
 function buildBoard() {
   boardEl.innerHTML = '';
@@ -64,8 +59,6 @@ function buildBoard() {
     cells.push(cell);
   }
 }
-
-/* ─── Game logic ────────────────────────────────────────── */
 
 function handleMove(index) {
   if (gameOver || board[index]) return;
@@ -120,8 +113,6 @@ function highlightWinners(line) {
   });
 }
 
-/* ─── UI updates ────────────────────────────────────────── */
-
 function updateTurnIndicator() {
   currentPlayerEl.textContent = currentPlayer;
   currentPlayerEl.style.color = currentPlayer === 'X' ? '#7F77DD' : '#1D9E75';
@@ -150,8 +141,6 @@ function showResult(type, winner) {
 function randomCongrats() {
   return CONGRATS_MESSAGES[Math.floor(Math.random() * CONGRATS_MESSAGES.length)];
 }
-
-/* ─── Confetti ──────────────────────────────────────────── */
 
 function launchConfetti() {
   confettiContainer.innerHTML = '';
@@ -184,8 +173,6 @@ function launchConfetti() {
   setTimeout(() => { confettiContainer.innerHTML = ''; }, 3000);
 }
 
-/* ─── Round / score reset ───────────────────────────────── */
-
 function resetRound() {
   board         = Array(9).fill(null);
   currentPlayer = 'X';
@@ -209,12 +196,8 @@ function resetScores() {
   resetRound();
 }
 
-/* ─── Event listeners ───────────────────────────────────── */
-
 document.getElementById('play-again-btn').addEventListener('click', resetRound);
 document.getElementById('reset-btn').addEventListener('click', resetScores);
-
-/* ─── Init ──────────────────────────────────────────────── */
 
 buildBoard();
 updateTurnIndicator();
