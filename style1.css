@@ -1,11 +1,9 @@
-/* ─── Reset ─────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ─── Root / Layout ─────────────────────────────────────── */
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: #f4f3ff;
@@ -28,7 +26,6 @@ body {
   min-width: 360px;
 }
 
-/* ─── Title ──────────────────────────────────────────────── */
 .game-title {
   font-size: 26px;
   font-weight: 600;
@@ -37,7 +34,6 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ─── Scoreboard ─────────────────────────────────────────── */
 .scoreboard {
   display: flex;
   gap: 16px;
@@ -71,7 +67,6 @@ body {
   color: #2c2c2a;
 }
 
-/* ─── Turn indicator ─────────────────────────────────────── */
 .turn-indicator {
   font-size: 14px;
   color: #888780;
@@ -84,7 +79,7 @@ body {
   color: #7F77DD;
 }
 
-/* ─── Board ──────────────────────────────────────────────── */
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -92,7 +87,7 @@ body {
   gap: 8px;
 }
 
-/* ─── Cells ──────────────────────────────────────────────── */
+
 .cell {
   width: 100px;
   height: 100px;
@@ -153,7 +148,7 @@ body {
   100% { transform: scale(1.06); background: #E1F5EE; }
 }
 
-/* ─── Reset button ───────────────────────────────────────── */
+
 .reset-btn {
   margin-top: 1.5rem;
   background: transparent;
@@ -171,7 +166,6 @@ body {
   color: #5F5E5A;
 }
 
-/* ─── Result overlay ─────────────────────────────────────── */
 .result-overlay {
   position: absolute;
   inset: 0;
@@ -233,7 +227,6 @@ body {
 .btn-play-again:hover  { background: #534AB7; }
 .btn-play-again:active { transform: scale(0.97); }
 
-/* ─── Confetti ───────────────────────────────────────────── */
 .confetti-container {
   position: absolute;
   inset: 0;
