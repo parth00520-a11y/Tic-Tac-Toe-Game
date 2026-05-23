@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+
+  <div id="game-root">
+
+    <h1 class="game-title">Tic‑Tac‑Toe</h1>
+
+    <div class="scoreboard">
+      <div class="score-card" id="score-x">
+        <div class="score-label">Player X</div>
+        <div class="score-val" id="val-x">0</div>
+      </div>
+      <div class="score-card" id="score-draw">
+        <div class="score-label">Draws</div>
+        <div class="score-val" id="val-draw">0</div>
+      </div>
+      <div class="score-card" id="score-o">
+        <div class="score-label">Player O</div>
+        <div class="score-val" id="val-o">0</div>
+      </div>
+    </div>
+
+    <div class="turn-indicator" id="turn-indicator">
+      Turn: <span id="current-player">X</span>
+    </div>
+
+    <div class="board" id="board" aria-label="game board"></div>
+
+    <button class="reset-btn" id="reset-btn">Reset scores</button>
+
+    <!-- Confetti layer -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- Win / Draw overlay -->
+    <div class="result-overlay" id="result-overlay" aria-live="polite">
+      <div class="result-emoji" id="result-emoji">🎉</div>
+      <div class="result-title" id="result-title">Player X wins!</div>
+      <div class="result-msg"  id="result-msg">Congratulations, you crushed it!</div>
+      <button class="btn-play-again" id="play-again-btn">Play again</button>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
